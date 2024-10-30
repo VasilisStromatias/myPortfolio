@@ -1,0 +1,88 @@
+// FONT FAMILY
+@mixin ff-main {
+  font-family: "Roboto", serif;
+}
+
+//FONT SIZES
+@mixin font-126 {
+  @include responsive-font-size(100px, 7vw, 126px);
+  @include responsive-line-height(100px, 7vw, 114px);
+}
+@mixin font-81 {
+  @include responsive-font-size(70px, 5vw, 81px);
+  @include responsive-line-height(70px, 5vw, 81px);
+}
+@mixin font-52 {
+  @include responsive-font-size(48px, 3vw, 52px);
+  @include responsive-line-height(50px, 3vw, 53px);
+}
+@mixin font-41 {
+  @include responsive-font-size(37px, 3vw, 41px);
+  @include responsive-line-height(40px, 3vw, 43px);
+}
+@mixin font-34 {
+  @include responsive-font-size(31px, 2vw, 33px);
+  @include responsive-line-height(32px, 2vw, 35px);
+}
+@mixin font-28 {
+  @include responsive-font-size(24px, 2vw, 28px);
+  @include responsive-line-height(24px, 2vw, 28px);
+}
+@mixin font-26 {
+  @include responsive-font-size(22px, 2vw, 26px);
+  @include responsive-line-height(26px, 2vw, 28px);
+}
+@mixin font-23 {
+  @include responsive-font-size(20px, 1.5vw, 23px);
+  @include responsive-line-height(24px, 2vw, 26px);
+}
+@mixin font-21 {
+  @include responsive-font-size(18px, 1.5vw, 21px);
+  @include responsive-line-height(26px, 2vw, 28px);
+}
+@mixin font-19 {
+  @include responsive-font-size(17px, 1vw, 19px);
+  @include responsive-line-height(26px, 2vw, 28px);
+}
+@mixin font-18 {
+  @include responsive-font-size(17px, 1vw, 18px);
+  @include responsive-line-height(22px, 2vw, 25px);
+}
+@mixin font-17 {
+  @include responsive-font-size(15px, 1vw, 17px);
+  @include responsive-line-height(22px, 2vw, 25px);
+}
+@mixin font-16 {
+  @include responsive-font-size(15px, 1vw, 16px);
+  @include responsive-line-height(22px, 2vw, 25px);
+}
+@mixin font-15 {
+  @include responsive-font-size(14px, 1vw, 15px);
+  @include responsive-line-height(22px, 2vw, 25px);
+}
+@mixin font-14 {
+  @include responsive-font-size(12px, 1vw, 14px);
+  @include responsive-line-height(18px, 2vw, 20px);
+}
+
+@mixin font-13 {
+  @include responsive-font-size(12px, 1vw, 13px);
+  @include responsive-line-height(18px, 2vw, 20px);
+}
+
+@mixin font-size($size) {
+  font-size: calculateRem($size);
+}
+
+@mixin responsive-font-size($min_size, $size, $max-size) {
+  font-size: clamp(calculateRem($min_size), $size, calculateRem($max-size));
+}
+
+@mixin responsive-line-height($min_size, $size, $max-size) {
+  line-height: clamp(calculateRem($min_size), $size, calculateRem($max-size));
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}

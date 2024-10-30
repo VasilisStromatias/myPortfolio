@@ -1,10 +1,13 @@
-import "./App.css";
+import "./sass/format.css";
+import "./sass/global.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>This is my site</h1>
-    </div>
+    <>
+      <div className="App">
+        <h1>This is my site</h1>
+      </div>
+    </>
   );
 }
 
